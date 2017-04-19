@@ -3,10 +3,10 @@ package BitReading;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
-// Test program to exercise BitInputStream and BitOutputStream. Run it
+// BitReading.Test program to exercise BitInputStream and BitOutputStream. Run it
 // on some small text file (containing at least 4 bytes) by
 // 
-//   java Test infilename outfilename
+//   java BitReading.Test infilename outfilename
 // 
 // This should copy the infile to outfile, while adding the character
 // '@' to the end of it (after any newline, if the file ends with
