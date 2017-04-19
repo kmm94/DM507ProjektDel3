@@ -3,9 +3,9 @@
 import java.util.Arrays;
 
 /**
- * Created by karim møller on 10-04-2017.
+ * Created by karim mÃ¸ller on 10-04-2017.
  */
-public class Freqvenzy {
+public class Frequency {
 
     private int[] feq = new int[255];
 
