@@ -15,14 +15,16 @@ public class Encode {
         Frequency fq = new Frequency();
 
         FileInputStream inFile = new FileInputStream(args[0]);
-        FileOutputStream outFile = new FileOutputStream(args[1]);
+//        FileOutputStream outFile = new FileOutputStream(args[1]);
 
+        //To Read every letter and make a frequency table where A = 65 and so on.
         int i = inFile.read();
-
         while(i != -1){
             fq.add(i);
+            i = inFile.read();
         }
-        fq.toString();
+        System.out.println(fq.toString());
+
 
     }
 

@@ -7,10 +7,18 @@ import java.util.Arrays;
  */
 public class Frequency {
 
-    private int[] feq = new int[255];
+    private int[] feq;
+
+    public Frequency() {
+        feq = new int[255];
+    }
 
     public void add(int i){
         feq[i] ++;
+    }
+
+    public int[] getFrequency(){
+        return feq;
     }
 
     @Override
