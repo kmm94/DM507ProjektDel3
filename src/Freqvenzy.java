@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * Created by karim møller on 10-04-2017.
  */
-public class Frequency {
+public class Freqvenzy {
 
     private int[] feq = new int[255];
 
@@ -15,6 +15,6 @@ public class Frequency {
 
     @Override
     public String toString() {
-        return "Frequency{" + "feq=" + Arrays.toString(feq) + '}';
+        return "Freqvenzy{" + "feq=" + Arrays.toString(feq) + '}';
     }
 }

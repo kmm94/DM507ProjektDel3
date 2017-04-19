@@ -12,7 +12,7 @@ import java.io.IOException;
 public class Encode {
     public static void main(String[] args) throws IOException {
 
-        Frequency fq = new Frequency();
+        Freqvenzy fq = new Freqvenzy();
 
         FileInputStream inFile = new FileInputStream(args[0]);
         FileOutputStream outFile = new FileOutputStream(args[1]);
