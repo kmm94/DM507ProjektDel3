@@ -15,6 +15,6 @@ public class Frequency {
 
     @Override
     public String toString() {
-        return "Freqvenzy{" + "feq=" + Arrays.toString(feq) + '}';
+        return "Frequency{" + "feq=" + Arrays.toString(feq) + '}';
     }
 }
