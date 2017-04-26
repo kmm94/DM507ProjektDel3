@@ -4,13 +4,15 @@
 public class HuffmanTree {
 
     private PQHeap pq =null;
+    private Element root = null;
 
     public void makeHuffmanTree(int[] a){
         pq = new PQHeap(256);
         for (int i =0; i < a.length; i++) {
             pq.insert(new Element(a[i], new Node(i)));
         }
-        System.out.println(HuffmanTree(pq).frequency);
+        root = HuffmanTree(pq);
+        System.out.println(root.frequency); //test
     }
 
     private Element HuffmanTree(PQHeap c){
@@ -22,6 +24,23 @@ public class HuffmanTree {
             pq.insert(new Element(zFreq,z));
         }
         return c.extractMin();
+    }
+    /**
+     * Private method that traverses the tree inorder hereby sorting it.
+     *
+     * @param x Parent node
+     * @param a The int array that the key will be placed ind.
+     * @return The int array with the key in.
+     */
+    private int[] inorderTreeWalk(Node x, int[] a) {
+
+        if (x != null) {
+            inorderTreeWalk(x.getLeftChild(), a);
+            a[i] = x.getKey();
+            i++;
+            inorderTreeWalk(x.getRightChild(), a);
+        }
+        return a;
     }
 
 }
