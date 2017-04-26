@@ -14,6 +14,8 @@ public class Encode {
 
         Frequency fq = new Frequency();
 
+        HuffmanTree huff = new HuffmanTree();
+
         FileInputStream inFile = new FileInputStream(args[0]);
 //        FileOutputStream outFile = new FileOutputStream(args[1]);
 
@@ -24,6 +26,7 @@ public class Encode {
             i = inFile.read();
         }
         System.out.println(fq.toString());
+        huff.makeHuffmanTree(fq.getFrequency());
 
 
     }

@@ -19,7 +19,7 @@ public class PQHeap implements PQ {
 
     /**
      * Returns the element on the 1 place in the array, and then heapifys the remaining
-     * @return Element With the lowest key
+     * @return Element With the lowest frequency
      */
     @Override
     public Element extractMin() {
@@ -40,8 +40,8 @@ public class PQHeap implements PQ {
         // ble place
         int current = counter; // the index where the element has bin inserted
 
-        //decrease-key
-        while (current > 1 && heap[Parent(current)].key > heap[current].key) { //if the heap is the first element it will just paste it and skip the while
+        //decrease-frequency
+        while (current > 1 && heap[Parent(current)].frequency > heap[current].frequency) { //if the heap is the first element it will just paste it and skip the while
             swap(current, Parent(current)); //swaps the two elements
             current = Parent(current); // sets heapsize to the half
         }
@@ -54,13 +54,13 @@ public class PQHeap implements PQ {
         int left = leftChild(pos);
         int right = rightChild(pos);
         int Smallest;
-        if(left <= counter && heap[left].key < heap[pos].key) {
+        if(left <= counter && heap[left].frequency < heap[pos].frequency) {
 
             Smallest = left;
         } else {
             Smallest = pos;
         }
-        if(right <= counter && heap[right].key < heap[Smallest].key){
+        if(right <= counter && heap[right].frequency < heap[Smallest].frequency){
             Smallest = right;
         }
         if (Smallest != pos){

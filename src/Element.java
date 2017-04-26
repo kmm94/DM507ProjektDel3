@@ -3,11 +3,11 @@
  * @author Mads
  */
 public class Element {
-    public int key;
+    public int frequency;
     public Object data;
 
     public Element(int i, Object o){
-	this.key = i;
+	this.frequency = i;
 	this.data = o;
     }
 }
