@@ -1,1 +1,2 @@
 abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ
+https://da.wikipedia.org/wiki/ASCII
