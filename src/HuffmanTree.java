@@ -9,6 +9,7 @@ public class HuffmanTree {
     public void makeHuffmanTree(int[] a){
         pq = new PQHeap(256);
         for (int i =0; i < a.length; i++) {
+
             pq.insert(new Element(a[i], new Node(i)));
         }
         root = HuffmanTree(pq);
