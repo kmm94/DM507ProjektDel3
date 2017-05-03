@@ -7,14 +7,14 @@ public class HuffmanTree {
 
 
     public void makeHuffmanTree(int[] a) {
-        pq = new PQHeap(256);
+        pq = new PQHeap(255);
         for (int i = 0; i < a.length; i++) {
             DictBinTree db = new DictBinTree();
             db.insert(i);
             pq.insert(new Element(a[i], db));
-            HuffmanTree(pq);
-            System.out.println(pq.extractMin().getFrequency());
         }
+        HuffmanTree(pq);
+        System.out.println(pq.extractMin().getFrequency());
     }
 
     private void HuffmanTree(PQHeap c) {
