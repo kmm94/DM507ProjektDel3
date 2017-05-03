@@ -3,29 +3,42 @@
  */
 public class HuffmanTree {
 
-    private PQHeap pq =null;
-    private Element root = null;
+    private PQHeap pq = null;
 
-    public void makeHuffmanTree(int[] a){
+
+    public void makeHuffmanTree(int[] a) {
         pq = new PQHeap(256);
-        for (int i =0; i < a.length; i++) {
-
-            pq.insert(new Element(a[i], new Node(i)));
+        for (int i = 0; i < a.length; i++) {
+            DictBinTree db = new DictBinTree();
+            db.insert(i);
+            pq.insert(new Element(a[i], db));
+            HuffmanTree(pq);
+            System.out.println(pq.extractMin().getFrequency());
         }
-        root = HuffmanTree(pq);
-        System.out.println(root.frequency); //test
     }
 
-    private Element HuffmanTree(PQHeap c){
-        for(int i = 1; i < 255; i++){
+    private void HuffmanTree(PQHeap c) {
+        for (int i = 1; i < 255; i++) {
             Element x = c.extractMin();
             Element y = c.extractMin();
-            int zFreq = x.frequency + y.frequency;
-            Node z = new Node((Node) x.data,(Node) y.data, zFreq);
-            pq.insert(new Element(zFreq,z));
+            int zFreq = x.getFrequency() + y.getFrequency();
+
+            DictBinTree xx = (DictBinTree) x.getData();
+            DictBinTree yy = (DictBinTree) y.getData();
+            DictBinTree z = new DictBinTree();
+
+            for (int j : xx.orderedTraversal()) {
+                z.insert(j);
+            }
+
+            for (int j : yy.orderedTraversal()) {
+                z.insert(j);
+            }
+
+            pq.insert(new Element(zFreq, z));
         }
-        return c.extractMin();
     }
+
     /**
      * Private method that traverses the tree inorder hereby sorting it.
      *
@@ -33,15 +46,15 @@ public class HuffmanTree {
      * @param a The int array that the key will be placed ind.
      * @return The int array with the key in.
      */
-    private int[] inorderTreeWalk(Node x, int[] a) {
-
-        if (x != null) {
-            inorderTreeWalk(x.getLeftChild(), a);
-            a[i] = x.getKey();
-            i++;
-            inorderTreeWalk(x.getRightChild(), a);
-        }
-        return a;
-    }
+//    private int[] inorderTreeWalk(Node x, int[] a) {
+//
+//        if (x != null) {
+//            inorderTreeWalk(x.getLeftChild(), a);
+//            a[i] = x.getKey();
+//            i++;
+//            inorderTreeWalk(x.getRightChild(), a);
+//        }
+//        return a;
+//    }
 
 }

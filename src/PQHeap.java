@@ -41,7 +41,7 @@ public class PQHeap implements PQ {
         int current = counter; // the index where the element has bin inserted
 
         //decrease-frequency
-        while (current > 1 && heap[Parent(current)].frequency > heap[current].frequency) { //if the heap is the first element it will just paste it and skip the while
+        while (current > 1 && heap[Parent(current)].getFrequency() > heap[current].getFrequency()) { //if the heap is the first element it will just paste it and skip the while
             swap(current, Parent(current)); //swaps the two elements
             current = Parent(current); // sets heapsize to the half
         }
@@ -54,13 +54,13 @@ public class PQHeap implements PQ {
         int left = leftChild(pos);
         int right = rightChild(pos);
         int Smallest;
-        if(left <= counter && heap[left].frequency < heap[pos].frequency) {
+        if(left <= counter && heap[left].getFrequency() < heap[pos].getFrequency()) {
 
             Smallest = left;
         } else {
             Smallest = pos;
         }
-        if(right <= counter && heap[right].frequency < heap[Smallest].frequency){
+        if(right <= counter && heap[right].getFrequency() < heap[Smallest].getFrequency()){
             Smallest = right;
         }
         if (Smallest != pos){
