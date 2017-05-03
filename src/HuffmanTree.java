@@ -6,7 +6,7 @@ public class HuffmanTree {
     private PQHeap pq = null;
 
 
-    public void makeHuffmanTree(int[] a) {
+    public Element makeHuffmanTree(int[] a) {
         pq = new PQHeap(255);
         for (int i = 0; i < a.length; i++) {
             DictBinTree db = new DictBinTree();
@@ -15,6 +15,7 @@ public class HuffmanTree {
         }
         HuffmanTree(pq);
         System.out.println(pq.extractMin().getFrequency());
+        return pq.extractMin();
     }
 
     private void HuffmanTree(PQHeap c) {
@@ -39,22 +40,5 @@ public class HuffmanTree {
         }
     }
 
-    /**
-     * Private method that traverses the tree inorder hereby sorting it.
-     *
-     * @param x Parent node
-     * @param a The int array that the key will be placed ind.
-     * @return The int array with the key in.
-     */
-//    private int[] inorderTreeWalk(Node x, int[] a) {
-//
-//        if (x != null) {
-//            inorderTreeWalk(x.getLeftChild(), a);
-//            a[i] = x.getKey();
-//            i++;
-//            inorderTreeWalk(x.getRightChild(), a);
-//        }
-//        return a;
-//    }
 
 }
