@@ -2,7 +2,7 @@
 /**
  * Created by karim møller(karmo15) and Mads Berggreen(madbe15) on 23-02-2017.
  */
-public class BinaryTree implements Dict {
+public class BinaryTree  {
 
     private Node root;
     private int size = 0;
@@ -18,8 +18,8 @@ public class BinaryTree implements Dict {
      *
      * @param key the note that will be inserted.
      */
-    @Override
-    public void insert(int key) {
+
+    public void insert(int key, int ascii) {
         size++;
         Node newNode = new Node(key);
         Node y = null;
@@ -46,7 +46,7 @@ public class BinaryTree implements Dict {
      *
      * @return A int Array that contains all the key.
      */
-    @Override
+
     public int[] orderedTraversal() {
         int[] nodes = new int[size];
         i = 0;
@@ -77,7 +77,7 @@ public class BinaryTree implements Dict {
      * @param key The key that will be searched for.
      * @return True if the Key exists in the tree else false.
      */
-    @Override
+
     public boolean search(int key) {
         if (treeSearch(root, key) == null) {
             return false;
