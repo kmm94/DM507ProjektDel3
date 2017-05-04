@@ -9,7 +9,7 @@ public class HuffmanTree {
     public Element makeHuffmanTree(int[] a) {
         pq = new PQHeap(255);
         for (int i = 0; i < a.length; i++) {
-            DictBinTree db = new DictBinTree();
+            BinaryTree db = new BinaryTree();
             db.insert(i);
             pq.insert(new Element(a[i], db));
         }
@@ -18,7 +18,7 @@ public class HuffmanTree {
             Element x = pq.extractMin();
             Element y = pq.extractMin();
             int zFreq = x.getFrequency() + y.getFrequency();
-            DictBinTree z = new DictBinTree();
+            BinaryTree z = new BinaryTree();
 
 
             pq.insert(new Element(zFreq, z));

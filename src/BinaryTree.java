@@ -2,14 +2,14 @@
 /**
  * Created by karim møller(karmo15) and Mads Berggreen(madbe15) on 23-02-2017.
  */
-public class DictBinTree implements Dict {
+public class BinaryTree implements Dict {
 
     private Node root;
     private int size = 0;
     private int i = 0;
 
 
-    public DictBinTree() {
+    public BinaryTree() {
         root = null;
     }
 
