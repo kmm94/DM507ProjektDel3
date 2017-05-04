@@ -13,32 +13,22 @@ public class HuffmanTree {
             db.insert(i);
             pq.insert(new Element(a[i], db));
         }
-        HuffmanTree(pq);
+        
+        for (int i = 1; i < 255; i++) {
+            Element x = pq.extractMin();
+            Element y = pq.extractMin();
+            int zFreq = x.getFrequency() + y.getFrequency();
+            DictBinTree z = new DictBinTree();
+
+
+            pq.insert(new Element(zFreq, z));
+        }
+        
         System.out.println(pq.extractMin().getFrequency());
         return pq.extractMin();
     }
 
-    private void HuffmanTree(PQHeap c) {
-        for (int i = 1; i < 255; i++) {
-            Element x = c.extractMin();
-            Element y = c.extractMin();
-            int zFreq = x.getFrequency() + y.getFrequency();
 
-            DictBinTree xx = (DictBinTree) x.getData();
-            DictBinTree yy = (DictBinTree) y.getData();
-            DictBinTree z = new DictBinTree();
-
-            for (int j : xx.orderedTraversal()) {
-                z.insert(j);
-            }
-
-            for (int j : yy.orderedTraversal()) {
-                z.insert(j);
-            }
-
-            pq.insert(new Element(zFreq, z));
-        }
-    }
 
 
 }

@@ -16,7 +16,9 @@ public class Encode {
 
         HuffmanTree huff = new HuffmanTree();
 
-        FileInputStream inFile = new FileInputStream(args[0]);
+//        FileInputStream inFile = new FileInputStream(args[0]);
+        FileInputStream inFile = new FileInputStream("src/test.txt");
+        
 //        FileOutputStream outFile = new FileOutputStream(args[1]);
 
         //To Read every letter and make a frequency table where A = 65 and so on.
