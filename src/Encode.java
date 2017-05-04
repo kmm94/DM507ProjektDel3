@@ -5,6 +5,7 @@
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * Created by karim møller on 10-04-2017.
@@ -27,8 +28,14 @@ public class Encode {
             fq.add(i);
             i = inFile.read();
         }
+
         System.out.println(fq.toString());
-        huff.makeHuffmanTree(fq.getFrequency());
+        Element huffTree = huff.makeHuffmanTree(fq.getFrequency());
+        BinaryTree b = (BinaryTree) huffTree.getData();
+        String[] s = b.orderedTraversal();
+        System.out.println(Arrays.toString(s));
+
+
 
 
     }

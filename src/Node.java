@@ -7,6 +7,7 @@ public class Node {
     private Node leftChild = null;
     private Node rightChild = null;
     private int key;
+    private int ascii = -1;
 
     public Node(Node leftChild, Node rightChild, int key) {
         this.leftChild = leftChild;
@@ -15,6 +16,14 @@ public class Node {
     }
 
     public Node() {
+    }
+
+    public int getAscii() {
+        return ascii;
+    }
+
+    public void setAscii(int ascii) {
+        this.ascii = ascii;
     }
 
     /**
