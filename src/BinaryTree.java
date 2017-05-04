@@ -76,7 +76,7 @@ public class BinaryTree {
         if (x != null) {
             inorderTreeWalk(x.getLeftChild(), sBit + "0", arrayPass);
 
-            if (x.getAscii() > 0) {
+            if (x.getAscii() != -1) {
                 arrayPass[x.getAscii()] = sBit;
             }
 
