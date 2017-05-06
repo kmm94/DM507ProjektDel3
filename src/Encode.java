@@ -53,6 +53,7 @@ public class Encode {
             k = inFile2.read();
         }
         inFile2.close();
+        output.close();
         outFile.close();
     }
 
