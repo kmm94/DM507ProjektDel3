@@ -20,24 +20,22 @@ public class Decode {
 
         for (int i = 0; i < freq.length; i++) {
             int k = input.readInt();
-            if (k < freq.length) {
+            if (k >=0) {
                 freq[i] = k;
                 bitCount += k;
             }
         }
 
-        System.out.println(Arrays.toString(freq));
         Element e = huff.makeHuffmanTree(freq);
         BinaryTree tree = (BinaryTree) e.getData();
-        String[] s = tree.orderedTraversal();
-        System.out.println(Arrays.toString(s));
+
 
         FileOutputStream output = new FileOutputStream("src/TestDecompressed.txt");
         for (int j = 0; j < bitCount; j++) {
             Node currentNode = tree.getRoot();
             while (currentNode.getLeftChild() != null ) {
                 int bit = input.readBit();
-                if (bit == 1) {
+                if (bit == 0) {
                     currentNode = currentNode.getLeftChild();
                 } else {
                     currentNode = currentNode.getRightChild();
