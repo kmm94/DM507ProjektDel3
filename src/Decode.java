@@ -1,4 +1,5 @@
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -9,11 +10,13 @@ public class Decode {
     public static void main(String[] args) throws IOException {
         Frequency fq = new Frequency();
         FileInputStream in = new FileInputStream("src/outCompressed.txt");
-
+        FileOutputStream output = new FileOutputStream("src/TestDecompressed");
         BitInputStream input = new BitInputStream(in);
-        BitOutputStream output = new BitOutputStream();
+
         HuffmanTree huff = new HuffmanTree();
         int[] freq = new int[256];
+
+        int bitcount
 
         for(int i =0; i <256; i++){
             int k = input.readInt();
@@ -26,7 +29,7 @@ public class Decode {
         Element e = huff.makeHuffmanTree(freq);
         BinaryTree tree = (BinaryTree) e.getData();
 
-        int bit
+        int bit;
 
         for (int j = 0; j < byteCount; j++) {
             Node currentNode = tree.getRoot();
@@ -38,7 +41,7 @@ public class Decode {
                     currentNode = currentNode.getRightChild();
                 }
             }
-            outFile.write(currentNode.bit);
+            output.write(currentNode.getAscii());
         }
     }
 }
