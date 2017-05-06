@@ -1,13 +1,11 @@
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
-import static javafx.util.Duration.seconds;
 
 /**
- * Created by karim møller on 06-05-2017.
+ * Created by karim møller(karmo15) and Mads Berggreen(madbe15) on 23-02-2017.
  */
 public class Decode {
     public static void main(String[] args) throws IOException {
@@ -43,7 +41,7 @@ public class Decode {
 
         for (int j = 0; j < byteCounter; j++) {
             Node currentNode = tree.getRoot();
-            while (currentNode.getLeftChild() != null ) {
+            while (currentNode.getLeftChild() != null) {
                 int bit = input.readBit();
                 if (bit == 0) {
                     currentNode = currentNode.getLeftChild();
