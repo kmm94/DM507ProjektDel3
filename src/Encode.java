@@ -17,7 +17,7 @@ public class Encode {
 //        FileOutputStream outFile = new FileOutputStream(args[1]);
         FileInputStream inFile = new FileInputStream("src/test.txt");
         FileInputStream inFile2 = new FileInputStream("src/test.txt");
-        FileOutputStream outFile = new FileOutputStream("src/out.txt");
+        FileOutputStream outFile = new FileOutputStream("src/outCompressed.txt");
 //        FileOutputStream outFile = new FileOutputStream(args[1]);
 
         BitOutputStream output = new BitOutputStream(outFile);
@@ -31,19 +31,29 @@ public class Encode {
         inFile.close();
 
 
-        System.out.println(fq.toString());
+
         Element huffTree = huff.makeHuffmanTree(fq.getFrequency());
+
         BinaryTree b = (BinaryTree) huffTree.getData();
-        String[] s = b.orderedTraversal();
-        System.out.println(Arrays.toString(s));
+
+        String[] huffmanCodes = b.orderedTraversal();
+
+        System.out.println(fq.toString());
+
+        for (int j : fq.getFrequency()) {
+            output.writeInt(j);
+        }
 
 
         int k = inFile2.read();
         while (k != -1) {
-            System.out.println("kodeord: " + s[k] + " input nr: " + k);
+            for (char ch: huffmanCodes[k].toCharArray()) {
+            outFile.write(Character.getNumericValue(ch));
+            }
             k = inFile2.read();
         }
         inFile2.close();
+        outFile.close();
     }
 
 }

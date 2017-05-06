@@ -29,7 +29,7 @@ public class HuffmanTree {
             pq.insert(new Element(zFreq, z));
         }
 
-        System.out.println(pq.extractMin().getFrequency());
+
         return pq.extractMin();
     }
 
