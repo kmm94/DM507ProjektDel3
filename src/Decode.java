@@ -9,7 +9,13 @@ import java.util.Arrays;
 public class Decode {
     public static void main(String[] args) throws IOException {
         Frequency fq = new Frequency();
-        FileInputStream in = new FileInputStream("src/outCompressed.txt");
+
+//        FileInputStream in = new FileInputStream("src/outCompressed.txt");
+//        FileOutputStream output = new FileOutputStream("src/TestDecompressed.txt");
+
+        FileInputStream in = new FileInputStream(args[0]);
+        FileOutputStream output = new FileOutputStream(args[1]);
+
 
         BitInputStream input = new BitInputStream(in);
 
@@ -30,7 +36,7 @@ public class Decode {
         BinaryTree tree = (BinaryTree) e.getData();
 
 
-        FileOutputStream output = new FileOutputStream("src/TestDecompressed.txt");
+
         for (int j = 0; j < bitCount; j++) {
             Node currentNode = tree.getRoot();
             while (currentNode.getLeftChild() != null ) {
