@@ -13,12 +13,12 @@ public class Encode {
 
         HuffmanTree huff = new HuffmanTree();
 
-      FileInputStream inFile = new FileInputStream(args[0]);
-      FileInputStream inFile2 = new FileInputStream(args[0]);
-      FileOutputStream outFile = new FileOutputStream(args[1]);
-//        FileInputStream inFile = new FileInputStream("src/test.txt");
-//        FileInputStream inFile2 = new FileInputStream("src/test.txt");
-//        FileOutputStream outFile = new FileOutputStream("src/outCompressed.txt");
+//      FileInputStream inFile = new FileInputStream(args[0]);
+//      FileInputStream inFile2 = new FileInputStream(args[0]);
+//      FileOutputStream outFile = new FileOutputStream(args[1]);
+        FileInputStream inFile = new FileInputStream("src/test.txt");
+        FileInputStream inFile2 = new FileInputStream("src/test.txt");
+        FileOutputStream outFile = new FileOutputStream("src/outCompressed.txt");
 
 
         BitOutputStream output = new BitOutputStream(outFile);
@@ -37,8 +37,6 @@ public class Encode {
         BinaryTree b = (BinaryTree) huffTree.getData();
 
         String[] huffmanCodes = b.orderedTraversal();
-
-        System.out.println(fq.toString());
 
         for (int j : fq.getFrequency()) {
             output.writeInt(j);
