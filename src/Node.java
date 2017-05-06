@@ -19,7 +19,6 @@ public class Node {
     }
 
     /**
-     *
      * @param key
      */
     public Node(int key) {

@@ -6,23 +6,38 @@ import java.util.Arrays;
 public class Frequency {
 
     private int[] LetterFrequency;
+    private int numberOfDifferentBytes = 256;
 
     public Frequency() {
-        LetterFrequency = new int[256];
+        LetterFrequency = new int[numberOfDifferentBytes];
     }
 
     public int getLength() {
         return LetterFrequency.length;
     }
 
-    public void set(int index, int add) {
-        LetterFrequency[index] = add;
+    /**
+     * Is used set the frequency of a specific byte with a specific amount.
+     *
+     * @param index The byte value.
+     * @param value The value for the byte's frequency.
+     */
+    public void set(int index, int value) {
+        LetterFrequency[index] = value;
     }
 
+    /**
+     * Is used to increment a byte's frequency
+     * @param i The byte that will be incremented
+     */
     public void add(int i) {
         LetterFrequency[i]++;
     }
 
+    /**
+     * Gets the frequency array.
+     * @return The int array with the frequency for each byte variable.
+     */
     public int[] getFrequency() {
         return LetterFrequency;
     }
