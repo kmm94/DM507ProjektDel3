@@ -53,8 +53,8 @@ public class BinaryTree {
     }
 
 
-    public String[] orderedTraversal() {
-        String[] nodes = new String[256];
+    public String[] orderedTraversal(int StringArraySize) {
+        String[] nodes = new String[StringArraySize];
         i = 0;
         return inorderTreeWalk(root,"", nodes);
     }

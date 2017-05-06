@@ -37,7 +37,7 @@ public class Encode {
 
         Element element = huffmanUtil.makeHuffmanTree(frequencyTable.getFrequency());
         BinaryTree tree = (BinaryTree) element.getData();
-        String[] huffmanCodes = tree.orderedTraversal();
+        String[] huffmanCodes = tree.orderedTraversal(frequencyTable.getLength());
 
         for (int bitFrequency : frequencyTable.getFrequency()) {
             output.writeInt(bitFrequency);
