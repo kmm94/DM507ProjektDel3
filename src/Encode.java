@@ -2,26 +2,27 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by karim møller on 10-04-2017.
  */
 public class Encode {
 
-    public static final int ARRAY_LENGTH = 255;
-
     public static void main(String[] args) throws IOException {
+
+        long startTime = System.nanoTime(); //start Time
 
         Frequency fq = new Frequency();
 
         HuffmanTree huff = new HuffmanTree();
 
 //      FileInputStream inFile = new FileInputStream(args[0]);
-//      FileInputStream inFile2 = new FileInputStream(args[0]);
+//      FileInputStream inputFile = new FileInputStream(args[0]);
 //      FileOutputStream outFile = new FileOutputStream(args[1]);
-        FileInputStream inFile = new FileInputStream("src/test2.docx");
-        FileInputStream inFile2 = new FileInputStream("src/test2.docx");
-        FileOutputStream outFile = new FileOutputStream("src/Compressed.docx");
+        FileInputStream inFile = new FileInputStream("src/test3.jpg");
+        FileInputStream inputFile = new FileInputStream("src/test3.jpg");
+        FileOutputStream outFile = new FileOutputStream("src/test3Compressed.jpg");
 
 
         BitOutputStream output = new BitOutputStream(outFile);
@@ -37,25 +38,31 @@ public class Encode {
 
         Element huffTree = huff.makeHuffmanTree(fq.getFrequency());
 
-        BinaryTree b = (BinaryTree) huffTree.getData();
+        BinaryTree tree = (BinaryTree) huffTree.getData();
 
-        String[] huffmanCodes = b.orderedTraversal();
+        String[] huffmanCodes = tree.orderedTraversal();
 
-        for (int j : fq.getFrequency()) {
-            output.writeInt(j);
+        for (int bitFrequency : fq.getFrequency()) {
+            output.writeInt(bitFrequency);
         }
 
 
-        int k = inFile2.read();
-        while (k != -1) {
-            for (char ch : huffmanCodes[k].toCharArray()) {
+        int bytes = inputFile.read();
+        while (bytes != -1) {
+            for (char ch : huffmanCodes[bytes].toCharArray()) {
                 output.writeBit(Character.getNumericValue(ch));
             }
-            k = inFile2.read();
+            bytes = inputFile.read();
         }
-        inFile2.close();
+        inputFile.close();
         output.close();
         outFile.close();
+
+        long endTime = System.nanoTime();
+
+        System.out.println("Time elapsed: " + TimeUnit.SECONDS.convert(endTime - startTime, TimeUnit.NANOSECONDS) + " seconds");
+
+
     }
 
 }

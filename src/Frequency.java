@@ -7,22 +7,27 @@ import java.util.Arrays;
  */
 public class Frequency {
 
-    private int[] feq;
+    private int[] Letterfrequency;
 
     public Frequency() {
-        feq = new int[256];
+        Letterfrequency = new int[256];
+    }
+
+
+    public void set(int index, int add) {
+        Letterfrequency[index] = add;
     }
 
     public void add(int i){
-        feq[i] ++;
+        Letterfrequency[i]++;
     }
 
     public int[] getFrequency(){
-        return feq;
+        return Letterfrequency;
     }
 
     @Override
     public String toString() {
-        return "Frequency{" + "feq=" + Arrays.toString(feq) + '}';
+        return "Frequency{" + "Letterfrequency= " + Arrays.toString(Letterfrequency) + '}';
     }
 }
