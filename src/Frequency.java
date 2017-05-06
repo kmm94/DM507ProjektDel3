@@ -5,30 +5,30 @@ import java.util.Arrays;
  */
 public class Frequency {
 
-    private int[] Letterfrequency;
+    private int[] LetterFrequency;
 
     public Frequency() {
-        Letterfrequency = new int[256];
+        LetterFrequency = new int[256];
     }
 
     public int getLength() {
-        return Letterfrequency.length;
+        return LetterFrequency.length;
     }
 
     public void set(int index, int add) {
-        Letterfrequency[index] = add;
+        LetterFrequency[index] = add;
     }
 
     public void add(int i) {
-        Letterfrequency[i]++;
+        LetterFrequency[i]++;
     }
 
     public int[] getFrequency() {
-        return Letterfrequency;
+        return LetterFrequency;
     }
 
     @Override
     public String toString() {
-        return "Frequency{" + "Letterfrequency= " + Arrays.toString(Letterfrequency) + '}';
+        return "Frequency{" + "LetterFrequency= " + Arrays.toString(LetterFrequency) + '}';
     }
 }
