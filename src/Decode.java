@@ -13,7 +13,8 @@ public class Decode {
     public static void main(String[] args) throws IOException {
 
         long startTime = System.nanoTime();
-        Frequency fq = new Frequency();
+
+        Frequency frequencyTable = new Frequency();
 
         FileInputStream in = new FileInputStream("src/testCompressed.txt");
         FileOutputStream output = new FileOutputStream("src/testDecompressed.txt");
@@ -23,23 +24,24 @@ public class Decode {
 
 
         BitInputStream input = new BitInputStream(in);
-        HuffmanTree huff = new HuffmanTree();
+        HuffmanTree huffUtil = new HuffmanTree();
 
-        int letterCounter = 0;
+        int byteCounter = 0;
 
-        for (int i = 0; i < fq.getFrequency().length; i++) {
+        for (int i = 0; i < frequencyTable.getLength(); i++) {
             int byteFrequency = input.readInt();
+
             if (byteFrequency >= 0) {
-                fq.set(i, byteFrequency);
-                letterCounter += byteFrequency;
+                frequencyTable.set(i, byteFrequency);
+                byteCounter += byteFrequency;
             }
         }
 
-        Element e = huff.makeHuffmanTree(fq.getFrequency());
-        BinaryTree tree = (BinaryTree) e.getData();
+        Element element = huffUtil.makeHuffmanTree(frequencyTable.getFrequency());
+        BinaryTree tree = (BinaryTree) element.getData();
 
 
-        for (int j = 0; j < letterCounter; j++) {
+        for (int j = 0; j < byteCounter; j++) {
             Node currentNode = tree.getRoot();
             while (currentNode.getLeftChild() != null ) {
                 int bit = input.readBit();

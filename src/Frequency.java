@@ -1,5 +1,3 @@
-
-
 import java.util.Arrays;
 
 /**
@@ -13,16 +11,19 @@ public class Frequency {
         Letterfrequency = new int[256];
     }
 
+    public int getLength() {
+        return Letterfrequency.length;
+    }
 
     public void set(int index, int add) {
         Letterfrequency[index] = add;
     }
 
-    public void add(int i){
+    public void add(int i) {
         Letterfrequency[i]++;
     }
 
-    public int[] getFrequency(){
+    public int[] getFrequency() {
         return Letterfrequency;
     }
 
