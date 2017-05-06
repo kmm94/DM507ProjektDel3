@@ -7,7 +7,7 @@ public class Node {
     private Node leftChild = null;
     private Node rightChild = null;
     private int key;
-    private int ascii = -1;
+    private int ascii;
 
     public Node(Node leftChild, Node rightChild, int key) {
         this.leftChild = leftChild;

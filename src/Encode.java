@@ -20,16 +20,16 @@ public class Encode {
 //      FileInputStream inFile = new FileInputStream(args[0]);
 //      FileInputStream inputFile = new FileInputStream(args[0]);
 //      FileOutputStream outFile = new FileOutputStream(args[1]);
-        FileInputStream inFile = new FileInputStream("src/test3.jpg");
-        FileInputStream inputFile = new FileInputStream("src/test3.jpg");
-        FileOutputStream outFile = new FileOutputStream("src/test3Compressed.jpg");
+        FileInputStream inFile = new FileInputStream("src/test.txt");
+        FileInputStream inputFile = new FileInputStream("src/test.txt");
+        FileOutputStream outFile = new FileOutputStream("src/testCompressed.txt");
 
 
         BitOutputStream output = new BitOutputStream(outFile);
 
         //To Read every letter and make a frequency table where A = 65 and so on.
         int i = inFile.read();
-        while (i != -1) {
+        while (i > -1) {
             fq.add(i);
             i = inFile.read();
         }
