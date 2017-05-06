@@ -7,15 +7,15 @@ public class Node {
     private Node leftChild = null;
     private Node rightChild = null;
     private int key;
-    private int ascii;
+    private int byteIntValue;
 
 
-    public int getAscii() {
-        return ascii;
+    public int getByteIntValue() {
+        return byteIntValue;
     }
 
-    public void setAscii(int ascii) {
-        this.ascii = ascii;
+    public void setByteIntValue(int byteValue) {
+        this.byteIntValue = byteValue;
     }
 
     /**

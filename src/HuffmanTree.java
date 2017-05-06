@@ -5,14 +5,14 @@ public class HuffmanTree {
 
 
     public Element makeHuffmanTree(int[] a) {
-        PQHeap pq = new PQHeap(256);
+        PQHeap pq = new PQHeap(a.length);
         for (int i = 0; i < a.length; i++) {
             BinaryTree db = new BinaryTree();
             db.insert(a[i], i);
             pq.insert(new Element(a[i], db));
         }
 
-        for (int i = 1; i < 256; i++) {
+        for (int i = 1; i < a.length; i++) {
             Element x = pq.extractMin();
             Element y = pq.extractMin();
             int zFreq = x.getFrequency() + y.getFrequency();

@@ -29,10 +29,10 @@ public class BinaryTree {
      * @param key the note that will be inserted.
      */
 
-    public void insert(int key, int ascii) {
+    public void insert(int key, int bytevalue) {
         size++;
         Node newNode = new Node(key);
-        newNode.setAscii(ascii);
+        newNode.setByteIntValue(bytevalue);
         Node y = null;
         Node x = root;
         while (x != null) { //is seraching for a place for the new node
@@ -63,8 +63,8 @@ public class BinaryTree {
         if (x != null) {
             inorderTreeWalk(x.getLeftChild(), sBit + "0", arrayPass);
 
-            if (x.getAscii() != -1) {
-                arrayPass[x.getAscii()] = sBit;
+            if (x.getByteIntValue() != -1) {
+                arrayPass[x.getByteIntValue()] = sBit;
             }
             inorderTreeWalk(x.getRightChild(), sBit + "1", arrayPass);
         }

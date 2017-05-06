@@ -15,10 +15,12 @@ public class Encode {
 
         Frequency frequencyTable = new Frequency();
         HuffmanTree huffmanUtil = new HuffmanTree();
-
+//      For cmd line:
 //      FileInputStream inFile = new FileInputStream(args[0]);
 //      FileInputStream inputFile = new FileInputStream(args[0]);
 //      FileOutputStream outFile = new FileOutputStream(args[1]);
+
+//      For IDE easy input:
         FileInputStream inFile = new FileInputStream("src/test.txt");
         FileInputStream inputFile = new FileInputStream("src/test.txt");
         FileOutputStream outFile = new FileOutputStream("src/testCompressed.txt");
@@ -26,7 +28,7 @@ public class Encode {
 
         BitOutputStream output = new BitOutputStream(outFile);
 
-        //To Read every letter and make a frequencyTable table where A = 65 and so on.
+        //To Read every letter to make a frequencyTable table where A = 65 ++ and so on.
         int oneByte = inFile.read();
         while (oneByte != -1) {
             frequencyTable.add(oneByte);

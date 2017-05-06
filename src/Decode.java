@@ -11,7 +11,6 @@ public class Decode {
     public static void main(String[] args) throws IOException {
 
         long startTime = System.nanoTime();
-
         Frequency frequencyTable = new Frequency();
 
         FileInputStream in = new FileInputStream("src/testCompressed.txt");
@@ -26,11 +25,11 @@ public class Decode {
 
         int byteCounter = 0;
 
-        for (int i = 0; i < frequencyTable.getLength(); i++) {
+        for (int index = 0; index < frequencyTable.getLength(); index++) {
             int byteFrequency = input.readInt();
 
             if (byteFrequency >= 0) {
-                frequencyTable.set(i, byteFrequency);
+                frequencyTable.set(index, byteFrequency);
                 byteCounter += byteFrequency;
             }
         }
@@ -39,7 +38,7 @@ public class Decode {
         BinaryTree tree = (BinaryTree) element.getData();
 
 
-        for (int j = 0; j < byteCounter; j++) {
+        for (int i = 0; i < byteCounter; i++) {
             Node currentNode = tree.getRoot();
             while (currentNode.getLeftChild() != null) {
                 int bit = input.readBit();
@@ -49,13 +48,11 @@ public class Decode {
                     currentNode = currentNode.getRightChild();
                 }
             }
-            output.write(currentNode.getAscii());
+            output.write(currentNode.getByteIntValue());
         }
         input.close();
         output.close();
-
         long endTime = System.nanoTime();
         System.out.println("Time elapsed: " + TimeUnit.SECONDS.convert(endTime - startTime, TimeUnit.NANOSECONDS) + " seconds");
-
     }
 }
