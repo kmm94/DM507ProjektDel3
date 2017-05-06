@@ -9,14 +9,6 @@ public class Node {
     private int key;
     private int ascii;
 
-    public Node(Node leftChild, Node rightChild, int key) {
-        this.leftChild = leftChild;
-        this.rightChild = rightChild;
-        this.key = key;
-    }
-
-    public Node() {
-    }
 
     public int getAscii() {
         return ascii;
@@ -77,14 +69,5 @@ public class Node {
      */
     public int getKey() {
         return key;
-    }
-
-    /**
-     * Sets the frequency.
-     *
-     * @param key
-     */
-    public void setKey(int key) {
-        this.key = key;
     }
 }
