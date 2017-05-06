@@ -10,38 +10,43 @@ public class Decode {
     public static void main(String[] args) throws IOException {
         Frequency fq = new Frequency();
         FileInputStream in = new FileInputStream("src/outCompressed.txt");
-        FileOutputStream output = new FileOutputStream("src/TestDecompressed");
+
         BitInputStream input = new BitInputStream(in);
 
         HuffmanTree huff = new HuffmanTree();
-        int[] freq = new int[256];
+        int[] freq = new int[255];
 
-        int bitcount
+        int bitCount = 0;
 
-        for(int i =0; i <256; i++){
+        for (int i = 0; i < freq.length; i++) {
             int k = input.readInt();
-            if(k <fq.getFrequency().length) {
+            if (k < freq.length) {
                 freq[i] = k;
+                bitCount += k;
             }
         }
-        input.close();
 
+        System.out.println(Arrays.toString(freq));
         Element e = huff.makeHuffmanTree(freq);
         BinaryTree tree = (BinaryTree) e.getData();
+        String[] s = tree.orderedTraversal();
+        System.out.println(Arrays.toString(s));
 
-        int bit;
-
-        for (int j = 0; j < byteCount; j++) {
+        FileOutputStream output = new FileOutputStream("src/TestDecompressed.txt");
+        for (int j = 0; j < bitCount; j++) {
             Node currentNode = tree.getRoot();
-            while (currentNode.getLeftChild() != null) {
-                bit = input.readBit();
-                if (bit == 0) {
+            while (currentNode.getLeftChild() != null ) {
+                int bit = input.readBit();
+                if (bit == 1) {
                     currentNode = currentNode.getLeftChild();
                 } else {
                     currentNode = currentNode.getRightChild();
                 }
             }
+
             output.write(currentNode.getAscii());
         }
+        input.close();
+        output.close();
     }
 }
