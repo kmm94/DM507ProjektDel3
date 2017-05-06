@@ -20,7 +20,7 @@ public class Decode {
 
         for (int i = 0; i < freq.length; i++) {
             int k = input.readInt();
-            if (k >=0) {
+            if (k >= 0) {
                 freq[i] = k;
                 bitCount += k;
             }

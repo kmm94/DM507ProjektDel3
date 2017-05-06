@@ -48,7 +48,7 @@ public class Encode {
         int k = inFile2.read();
         while (k != -1) {
             for (char ch: huffmanCodes[k].toCharArray()) {
-            outFile.write(Character.getNumericValue(ch));
+            output.writeBit(Character.getNumericValue(ch));
             }
             k = inFile2.read();
         }
