@@ -67,7 +67,7 @@ public class BinaryTree {
 //    }
 
     public String[] orderedTraversal() {
-        String[] nodes = new String[255];
+        String[] nodes = new String[256];
         i = 0;
         return inorderTreeWalk(root,"", nodes);
     }

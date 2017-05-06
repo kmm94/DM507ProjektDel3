@@ -14,7 +14,7 @@ public class HuffmanTree {
             pq.insert(new Element(a[i], db));
         }
 
-        for (int i = 1; i < 255; i++) {
+        for (int i = 1; i < 256; i++) {
             Element x = pq.extractMin();
             Element y = pq.extractMin();
             int zFreq = x.getFrequency() + y.getFrequency();

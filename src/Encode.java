@@ -7,6 +7,9 @@ import java.util.Arrays;
  * Created by karim møller on 10-04-2017.
  */
 public class Encode {
+
+    public static final int ARRAY_LENGTH = 255;
+
     public static void main(String[] args) throws IOException {
 
         Frequency fq = new Frequency();
@@ -16,9 +19,9 @@ public class Encode {
 //      FileInputStream inFile = new FileInputStream(args[0]);
 //      FileInputStream inFile2 = new FileInputStream(args[0]);
 //      FileOutputStream outFile = new FileOutputStream(args[1]);
-        FileInputStream inFile = new FileInputStream("src/test.txt");
-        FileInputStream inFile2 = new FileInputStream("src/test.txt");
-        FileOutputStream outFile = new FileOutputStream("src/outCompressed.txt");
+        FileInputStream inFile = new FileInputStream("src/test2.docx");
+        FileInputStream inFile2 = new FileInputStream("src/test2.docx");
+        FileOutputStream outFile = new FileOutputStream("src/Compressed.docx");
 
 
         BitOutputStream output = new BitOutputStream(outFile);

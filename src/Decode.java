@@ -10,8 +10,8 @@ public class Decode {
     public static void main(String[] args) throws IOException {
         Frequency fq = new Frequency();
 
-        FileInputStream in = new FileInputStream("src/outCompressed.txt");
-        FileOutputStream output = new FileOutputStream("src/TestDecompressed.txt");
+        FileInputStream in = new FileInputStream("src/Compressed.docx");
+        FileOutputStream output = new FileOutputStream("src/Decompressed.docx");
 //
 //        FileInputStream in = new FileInputStream(args[0]);
 //        FileOutputStream output = new FileOutputStream(args[1]);
@@ -20,7 +20,7 @@ public class Decode {
         BitInputStream input = new BitInputStream(in);
 
         HuffmanTree huff = new HuffmanTree();
-        int[] freq = new int[255];
+        int[] freq = new int[256];
 
         int bitCount = 0;
 

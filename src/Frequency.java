@@ -10,7 +10,7 @@ public class Frequency {
     private int[] feq;
 
     public Frequency() {
-        feq = new int[255];
+        feq = new int[256];
     }
 
     public void add(int i){
