@@ -24,9 +24,9 @@ public class BinaryTree {
     }
 
     /**
-     * Inserts the nodes in the tree.
+     * Inserts the root in the tree.
      *
-     * @param key the note that will be inserted.
+     * @param key the note that will become the root.
      */
 
     public void insertRoot(int key) {
