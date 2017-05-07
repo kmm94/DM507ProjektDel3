@@ -47,9 +47,9 @@ public class BinaryTree {
         if (x != null) {
             inorderTreeWalk(x.getLeftChild(), sBit + "0", arrayPass);
 
-//            if (x.getKey() != -1) {
+            if (x.getKey() != -1) {
                 arrayPass[x.getKey()] = sBit;
-//            }
+            }
             inorderTreeWalk(x.getRightChild(), sBit + "1", arrayPass);
         }
         return arrayPass;

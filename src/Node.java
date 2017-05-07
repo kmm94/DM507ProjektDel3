@@ -6,7 +6,7 @@ public class Node {
 
     private Node leftChild = null;
     private Node rightChild = null;
-    private int key;
+    private int key = -1;
 
     /**
      * @param key
