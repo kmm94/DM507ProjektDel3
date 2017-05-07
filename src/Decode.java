@@ -50,7 +50,7 @@ public class Decode {
                     currentNode = currentNode.getRightChild();
                 }
             }
-            output.write(currentNode.getByteIntValue());
+            output.write(currentNode.getKey());
         }
         input.close();
         output.close();

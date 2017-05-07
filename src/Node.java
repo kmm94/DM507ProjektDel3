@@ -7,16 +7,6 @@ public class Node {
     private Node leftChild = null;
     private Node rightChild = null;
     private int key;
-    private int byteIntValue;
-
-
-    public int getByteIntValue() {
-        return byteIntValue;
-    }
-
-    public void setByteIntValue(int byteValue) {
-        this.byteIntValue = byteValue;
-    }
 
     /**
      * @param key
