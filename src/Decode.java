@@ -17,8 +17,8 @@ public class Decode {
 //        FileOutputStream output = new FileOutputStream(args[1]);
 
 //      For IDE easy input:
-        FileInputStream in = new FileInputStream("src/test3Compressed.jpg");
-        FileOutputStream output = new FileOutputStream("src/test3Decompressed.jpg");
+        FileInputStream in = new FileInputStream("src/test4Compressed.jpg");
+        FileOutputStream output = new FileOutputStream("src/test4Decompressed.jpg");
 
 
         Frequency frequencyTable = new Frequency(256);

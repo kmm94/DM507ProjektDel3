@@ -6,7 +6,7 @@ public class Node {
 
     private Node leftChild = null;
     private Node rightChild = null;
-    private int key = -1;
+    private Integer key;
 
     /**
      * @param key
@@ -60,7 +60,7 @@ public class Node {
      *
      * @return frequency
      */
-    public int getKey() {
+    public Integer getKey() {
         return key;
     }
 }

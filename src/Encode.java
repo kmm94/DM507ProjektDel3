@@ -18,9 +18,9 @@ public class Encode {
 //      FileOutputStream outFile = new FileOutputStream(args[1]);
 
 //      For IDE easy input:
-        FileInputStream inFile = new FileInputStream("src/test3.jpg");
-        FileInputStream inputFile = new FileInputStream("src/test3.jpg");
-        FileOutputStream outFile = new FileOutputStream("src/test3Compressed.jpg");
+        FileInputStream inFile = new FileInputStream("src/test4.jpg");
+        FileInputStream inputFile = new FileInputStream("src/test4.jpg");
+        FileOutputStream outFile = new FileOutputStream("src/test4Compressed.jpg");
 
 
         BitOutputStream output = new BitOutputStream(outFile);
@@ -56,6 +56,7 @@ public class Encode {
 
         long endTime = System.nanoTime();
         System.out.println("Time elapsed: " + TimeUnit.SECONDS.convert(endTime - startTime, TimeUnit.NANOSECONDS) + " seconds");
+
     }
 
 }
