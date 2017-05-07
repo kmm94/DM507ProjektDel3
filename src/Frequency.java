@@ -18,7 +18,6 @@ public class Frequency {
 
     /**
      * Is used set the frequency of a specific byte with a specific amount.
-     *
      * @param index The byte value.
      * @param value The value for the byte's frequency.
      */

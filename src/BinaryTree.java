@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Created by karim møller(karmo15) and Mads Berggreen(madbe15) on 23-02-2017.
  */
@@ -28,7 +30,6 @@ public class BinaryTree {
      *
      * @param key the note that will become the root.
      */
-
     public void insertRoot(int key) {
         size++;
         Node newNode = new Node(key);
@@ -52,5 +53,10 @@ public class BinaryTree {
             inorderTreeWalk(x.getRightChild(), sBit + "1", arrayPass);
         }
         return arrayPass;
+    }
+
+    @Override
+    public String toString() {
+        return "BinaryTree{" + " size= " + size + ", Huffman codes= " + Arrays.toString(orderedTraversal(256)) + '}';
     }
 }
