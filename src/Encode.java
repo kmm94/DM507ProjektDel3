@@ -12,8 +12,6 @@ public class Encode {
 
         long startTime = System.nanoTime(); //start Time
 
-        Frequency frequencyTable = new Frequency();
-        HuffmanTree huffmanUtil = new HuffmanTree();
 //      For cmd line:
 //      FileInputStream inFile = new FileInputStream(args[0]);
 //      FileInputStream inputFile = new FileInputStream(args[0]);
@@ -26,6 +24,8 @@ public class Encode {
 
 
         BitOutputStream output = new BitOutputStream(outFile);
+        Frequency frequencyTable = new Frequency();
+        HuffmanTree huffmanUtil = new HuffmanTree();
 
         //To Read every letter to make a frequencyTable table where A = 65 ++ and so on.
         int oneByte = inFile.read();

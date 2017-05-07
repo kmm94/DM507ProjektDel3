@@ -11,15 +11,17 @@ public class Decode {
     public static void main(String[] args) throws IOException {
 
         long startTime = System.nanoTime();
-        Frequency frequencyTable = new Frequency();
 
-        FileInputStream in = new FileInputStream("src/testCompressed.txt");
-        FileOutputStream output = new FileOutputStream("src/testDecompressed.txt");
-
+//        For CMD:
 //        FileInputStream in = new FileInputStream(args[0]);
 //        FileOutputStream output = new FileOutputStream(args[1]);
 
+//      For IDE easy input:
+        FileInputStream in = new FileInputStream("src/testCompressed.txt");
+        FileOutputStream output = new FileOutputStream("src/testDecompressed.txt");
 
+
+        Frequency frequencyTable = new Frequency();
         BitInputStream input = new BitInputStream(in);
         HuffmanTree huffUtil = new HuffmanTree();
 
