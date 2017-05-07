@@ -18,13 +18,13 @@ public class Encode {
 //      FileOutputStream outFile = new FileOutputStream(args[1]);
 
 //      For IDE easy input:
-        FileInputStream inFile = new FileInputStream("src/test.txt");
-        FileInputStream inputFile = new FileInputStream("src/test.txt");
-        FileOutputStream outFile = new FileOutputStream("src/testCompressed.txt");
+        FileInputStream inFile = new FileInputStream("src/test2.doc");
+        FileInputStream inputFile = new FileInputStream("src/test2.doc");
+        FileOutputStream outFile = new FileOutputStream("src/test2Compressed.doc");
 
 
         BitOutputStream output = new BitOutputStream(outFile);
-        Frequency frequencyTable = new Frequency();
+        Frequency frequencyTable = new Frequency(256);
         HuffmanTree huffmanUtil = new HuffmanTree();
 
         //To Read every letter to make a frequencyTable table where A = 65 ++ and so on.
@@ -35,12 +35,9 @@ public class Encode {
         }
         inFile.close();
 
-
         Element element = huffmanUtil.makeHuffmanTree(frequencyTable.getFrequencys());
         BinaryTree tree = (BinaryTree) element.getData();
         String[] huffmanCodes = tree.orderedTraversal(frequencyTable.getLength());
-
-        System.out.println(tree.toString());
 
         for (int bitFrequency : frequencyTable.getFrequencys()) {
             output.writeInt(bitFrequency);

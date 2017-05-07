@@ -1,4 +1,3 @@
-import javax.imageio.metadata.IIOInvalidTreeException;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -18,11 +17,11 @@ public class Decode {
 //        FileOutputStream output = new FileOutputStream(args[1]);
 
 //      For IDE easy input:
-        FileInputStream in = new FileInputStream("src/testCompressed.txt");
-        FileOutputStream output = new FileOutputStream("src/testDecompressed.txt");
+        FileInputStream in = new FileInputStream("src/test2Compressed.doc");
+        FileOutputStream output = new FileOutputStream("src/test2Decompressed.doc");
 
 
-        Frequency frequencyTable = new Frequency();
+        Frequency frequencyTable = new Frequency(256);
         BitInputStream input = new BitInputStream(in);
         HuffmanTree huffUtil = new HuffmanTree();
 

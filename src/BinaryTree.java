@@ -46,7 +46,10 @@ public class BinaryTree {
     private String[] inorderTreeWalk(Node x, String sBit, String[] arrayPass) {
         if (x != null) {
             inorderTreeWalk(x.getLeftChild(), sBit + "0", arrayPass);
+
+//            if (x.getKey() != -1) {
                 arrayPass[x.getKey()] = sBit;
+//            }
             inorderTreeWalk(x.getRightChild(), sBit + "1", arrayPass);
         }
         return arrayPass;
@@ -54,6 +57,6 @@ public class BinaryTree {
 
     @Override
     public String toString() {
-        return "BinaryTree{" + " size= " + size + ", Huffman codes= " + Arrays.toString(orderedTraversal(256)) + '}';
+        return "BinaryTree{" + " size= " + 256 + ", Huffman codes= " + Arrays.toString(orderedTraversal(256)) + '}';
     }
 }

@@ -15,6 +15,10 @@ public class Node {
         this.key = key;
     }
 
+    public Node() {
+
+    }
+
     /**
      * Returns the leftmost child of a node.
      *

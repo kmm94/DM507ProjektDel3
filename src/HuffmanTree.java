@@ -22,7 +22,7 @@ public class HuffmanTree {
 
             BinaryTree z = new BinaryTree();
 
-            z.insertTree(new Node(zFreq), min.getRoot(),secondmin.getRoot());
+            z.insertTree(new Node(), min.getRoot(), secondmin.getRoot());
 
             pq.insert(new Element(zFreq, z));
         }

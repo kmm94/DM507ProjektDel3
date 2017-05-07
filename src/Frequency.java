@@ -5,15 +5,15 @@ import java.util.Arrays;
  */
 public class Frequency {
 
-    private int[] ByteFrequencys;
-    private int numberOfDifferentBytes = 256;
+    private int[] byteFrequencys;
 
-    public Frequency() {
-        ByteFrequencys = new int[numberOfDifferentBytes];
+
+    public Frequency(int size) {
+        byteFrequencys = new int[size];
     }
 
     public int getLength() {
-        return ByteFrequencys.length;
+        return byteFrequencys.length;
     }
 
     /**
@@ -22,7 +22,7 @@ public class Frequency {
      * @param value The value for the byte's frequency.
      */
     public void set(int index, int value) {
-        ByteFrequencys[index] = value;
+        byteFrequencys[index] = value;
     }
 
     /**
@@ -30,7 +30,7 @@ public class Frequency {
      * @param i The byte that will be incremented
      */
     public void increment(int i) {
-        ByteFrequencys[i]++;
+        byteFrequencys[i]++;
     }
 
     /**
@@ -38,11 +38,11 @@ public class Frequency {
      * @return The int array with the frequency for each byte variable.
      */
     public int[] getFrequencys() {
-        return ByteFrequencys;
+        return byteFrequencys;
     }
 
     @Override
     public String toString() {
-        return "Frequency{" + "ByteFrequencys= " + Arrays.toString(ByteFrequencys) + '}';
+        return "Frequency{" + "size=" + byteFrequencys.length + " ,ByteFrequencys= " + Arrays.toString(byteFrequencys) + '}';
     }
 }
