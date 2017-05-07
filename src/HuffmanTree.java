@@ -25,10 +25,6 @@ public class HuffmanTree {
 
             pq.insert(new Element(zFreq, z));
         }
-
-
         return pq.extractMin();
     }
-
-
 }
