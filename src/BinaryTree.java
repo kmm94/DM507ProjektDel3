@@ -29,26 +29,10 @@ public class BinaryTree {
      * @param key the note that will be inserted.
      */
 
-    public void insert(int key) {
+    public void insertRoot(int key) {
         size++;
         Node newNode = new Node(key);
-        Node y = null;
-        Node x = root;
-        while (x != null) { //is seraching for a place for the new node
-            y = x;
-            if (newNode.getKey() < x.getKey()) {
-                x = x.getLeftChild();
-            } else {
-                x = x.getRightChild();
-            }
-        }
-        if (y == null) { // if root is empty
-            root = newNode;
-        } else if (newNode.getKey() < y.getKey()) { //inserting the new note
-            y.setLeftChild(newNode);
-        } else {
-            y.setRightChild(newNode);
-        }
+        root = newNode;
     }
 
 

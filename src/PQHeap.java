@@ -32,11 +32,11 @@ public class PQHeap implements PQ {
 
     /**
      * inserts the Element on the last place in the array and then bubbels it up to the right place.
-     * @param e The element that will be insert.
+     * @param e The element that will be insertRoot.
      */
     @Override
     public void insert(Element e) {
-        heap[++counter] = e; // insert on last availa
+        heap[++counter] = e; // insertRoot on last availa
         // ble place
         int current = counter; // the index where the element has bin inserted
 

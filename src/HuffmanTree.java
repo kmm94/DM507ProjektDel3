@@ -8,7 +8,7 @@ public class HuffmanTree {
         PQHeap pq = new PQHeap(a.length);
         for (int i = 0; i < a.length; i++) {
             BinaryTree db = new BinaryTree();
-            db.insert(i);
+            db.insertRoot(i);
             pq.insert(new Element(a[i], db));
         }
 
