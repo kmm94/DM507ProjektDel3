@@ -1,3 +1,4 @@
+import javax.imageio.metadata.IIOInvalidTreeException;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -33,6 +34,8 @@ public class Decode {
             if (byteFrequency >= 0) {
                 frequencyTable.set(index, byteFrequency);
                 byteCounter += byteFrequency;
+            } else {
+                throw new IllegalArgumentException("Read input was negativ");
             }
         }
 

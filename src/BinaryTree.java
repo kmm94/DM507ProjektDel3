@@ -46,10 +46,7 @@ public class BinaryTree {
     private String[] inorderTreeWalk(Node x, String sBit, String[] arrayPass) {
         if (x != null) {
             inorderTreeWalk(x.getLeftChild(), sBit + "0", arrayPass);
-
-            if (x.getKey() != -1) {
                 arrayPass[x.getKey()] = sBit;
-            }
             inorderTreeWalk(x.getRightChild(), sBit + "1", arrayPass);
         }
         return arrayPass;
