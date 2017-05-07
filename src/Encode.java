@@ -18,9 +18,9 @@ public class Encode {
 //      FileOutputStream outFile = new FileOutputStream(args[1]);
 
 //      For IDE easy input:
-        FileInputStream inFile = new FileInputStream("src/test4.jpg");
-        FileInputStream inputFile = new FileInputStream("src/test4.jpg");
-        FileOutputStream outFile = new FileOutputStream("src/test4Compressed.jpg");
+        FileInputStream inFile = new FileInputStream("src/test2.doc");
+        FileInputStream inputFile = new FileInputStream("src/test2.doc");
+        FileOutputStream outFile = new FileOutputStream("src/test2Compressed.doc");
 
 
         BitOutputStream output = new BitOutputStream(outFile);

@@ -3,16 +3,6 @@
  */
 public class HuffmanTree {
 
-    Integer h;
-
-    public Integer getH() {
-        return h;
-    }
-
-    public void setH(Integer h) {
-        this.h = h;
-    }
-
     public Element makeHuffmanTree(int[] a) {
         PQHeap pq = new PQHeap(a.length);
         for (int i = 0; i < a.length; i++) {
