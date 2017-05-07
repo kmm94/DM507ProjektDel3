@@ -9,7 +9,6 @@ public class BinaryTree {
     private int size = 0;
     private int i = 0;
 
-
     public BinaryTree() {
         root = null;
     }
@@ -36,7 +35,6 @@ public class BinaryTree {
         root = newNode;
     }
 
-
     public String[] orderedTraversal(int StringArraySize) {
         String[] nodes = new String[StringArraySize];
         i = 0;
@@ -47,7 +45,7 @@ public class BinaryTree {
         if (x != null) {
             inorderTreeWalk(x.getLeftChild(), sBit + "0", arrayPass);
 
-            if (x.getKey() != -1) {
+            if (x.getKey() != null) {
                 arrayPass[x.getKey()] = sBit;
             }
             inorderTreeWalk(x.getRightChild(), sBit + "1", arrayPass);

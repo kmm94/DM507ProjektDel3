@@ -1,4 +1,3 @@
-
 /**
  * Created by karim møller(karmo15) and Mads Berggreen(madbe15) on 23-02-2017.
  */
@@ -6,7 +5,7 @@ public class Node {
 
     private Node leftChild = null;
     private Node rightChild = null;
-    private int key = -1;
+    private Integer key;
 
     /**
      * @param key
@@ -60,7 +59,7 @@ public class Node {
      *
      * @return frequency
      */
-    public int getKey() {
+    public Integer getKey() {
         return key;
     }
 }

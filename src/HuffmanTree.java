@@ -3,7 +3,6 @@
  */
 public class HuffmanTree {
 
-
     public Element makeHuffmanTree(int[] a) {
         PQHeap pq = new PQHeap(a.length);
         for (int i = 0; i < a.length; i++) {
@@ -18,18 +17,14 @@ public class HuffmanTree {
             int zFreq = x.getFrequency() + y.getFrequency();
 
             BinaryTree min = (BinaryTree) x.getData();
-            BinaryTree secondmin = (BinaryTree) y.getData();
+            BinaryTree secondMin = (BinaryTree) y.getData();
 
             BinaryTree z = new BinaryTree();
 
-            z.insertTree(new Node(), min.getRoot(), secondmin.getRoot());
+            z.insertTree(new Node(), min.getRoot(), secondMin.getRoot());
 
             pq.insert(new Element(zFreq, z));
         }
-
-
         return pq.extractMin();
     }
-
-
 }
