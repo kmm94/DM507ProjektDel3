@@ -1,7 +1,6 @@
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -31,7 +30,7 @@ public class Encode {
         //To Read every letter to make a frequencyTable table where A = 65 ++ and so on.
         int oneByte = inFile.read();
         while (oneByte != -1) {
-            frequencyTable.add(oneByte);
+            frequencyTable.increment(oneByte);
             oneByte = inFile.read();
         }
         inFile.close();

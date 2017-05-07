@@ -30,7 +30,7 @@ public class Frequency {
      * Is used to increment a byte's frequency
      * @param i The byte that will be incremented
      */
-    public void add(int i) {
+    public void increment(int i) {
         ByteFrequencys[i]++;
     }
 
