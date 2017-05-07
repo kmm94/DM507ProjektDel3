@@ -3,13 +3,14 @@
  */
 public class PQHeap implements PQ {
 
-    private Element[] heap;
     private final int one = 1; // adding to one Index the array
+    private Element[] heap;
     private int counter = 0; // keeps track the amount of elemens in the heap
 
 
     /**
      * Constructor.
+     *
      * @param maxElements The amount of elements that there is room for in the que
      */
     public PQHeap(int maxElements) {
@@ -19,6 +20,7 @@ public class PQHeap implements PQ {
 
     /**
      * Returns the element on the 1 place in the array, and then heapifys the remaining
+     *
      * @return Element With the lowest frequency
      */
     @Override
@@ -32,6 +34,7 @@ public class PQHeap implements PQ {
 
     /**
      * inserts the Element on the last place in the array and then bubbels it up to the right place.
+     *
      * @param e The element that will be insertRoot.
      */
     @Override
@@ -46,60 +49,67 @@ public class PQHeap implements PQ {
             current = Parent(current); // sets heapsize to the half
         }
     }
+
     /**
-    * Method that heapifies the positions into a mininum heap.
-    * @param pos
-    */
+     * Method that heapifies the positions into a mininum heap.
+     *
+     * @param pos
+     */
     private void MinHeapify(int pos) {
         int left = leftChild(pos);
         int right = rightChild(pos);
         int Smallest;
-        if(left <= counter && heap[left].getFrequency() < heap[pos].getFrequency()) {
+        if (left <= counter && heap[left].getFrequency() < heap[pos].getFrequency()) {
 
             Smallest = left;
         } else {
             Smallest = pos;
         }
-        if(right <= counter && heap[right].getFrequency() < heap[Smallest].getFrequency()){
+        if (right <= counter && heap[right].getFrequency() < heap[Smallest].getFrequency()) {
             Smallest = right;
         }
-        if (Smallest != pos){
+        if (Smallest != pos) {
             swap(pos, Smallest);
             MinHeapify(Smallest);
         }
     }
-    
+
     /**
-    * Method for swapping two elements making them change places.
-    * @param i
-    * @param k
-    */
+     * Method for swapping two elements making them change places.
+     *
+     * @param i
+     * @param k
+     */
     private void swap(int i, int k) {
-        Element temp ;
+        Element temp;
         temp = heap[i];
         heap[i] = heap[k];
         heap[k] = temp;
     }
-    
+
     /**
-    * Method for determining the parent of a node.
-    * @param i  
-    */
+     * Method for determining the parent of a node.
+     *
+     * @param i
+     */
     private int Parent(int i) {
         return i / 2;
     }
-    
+
     /**
-    * Method for determining the left child of a node.
-    * @param i  
-    */
+     * Method for determining the left child of a node.
+     *
+     * @param i
+     */
     private int leftChild(int i) {
         return i * 2;
     }
+
     /**
-    * Method for determining the right child of a node.
-    * @param i  
-    */
+     * Method for determining the right child of a node.
+     *
+     * @param i
+     */
     private int rightChild(int i) {
         return i * 2 + 1;
     }

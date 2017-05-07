@@ -9,7 +9,6 @@ public class BinaryTree {
     private int size = 0;
     private int i = 0;
 
-
     public BinaryTree() {
         root = null;
     }
@@ -35,7 +34,6 @@ public class BinaryTree {
         Node newNode = new Node(key);
         root = newNode;
     }
-
 
     public String[] orderedTraversal(int StringArraySize) {
         String[] nodes = new String[StringArraySize];

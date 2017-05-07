@@ -43,7 +43,6 @@ public class Encode {
             output.writeInt(bitFrequency);
         }
 
-
         int aByte = inputFile.read();
         while (aByte != -1) {
             for (char ch : huffmanCodes[aByte].toCharArray()) {

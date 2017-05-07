@@ -18,6 +18,7 @@ public class Frequency {
 
     /**
      * Is used set the frequency of a specific byte with a specific amount.
+     *
      * @param index The byte value.
      * @param value The value for the byte's frequency.
      */
@@ -27,6 +28,7 @@ public class Frequency {
 
     /**
      * Is used to increment a byte's frequency
+     *
      * @param i The byte that will be incremented
      */
     public void increment(int i) {
@@ -35,6 +37,7 @@ public class Frequency {
 
     /**
      * Gets the frequency array.
+     *
      * @return The int array with the frequency for each byte variable.
      */
     public int[] getFrequencys() {
