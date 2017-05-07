@@ -37,7 +37,7 @@ public class Frequency {
      * Gets the frequency array.
      * @return The int array with the frequency for each byte variable.
      */
-    public int[] getFrequency() {
+    public int[] getFrequencys() {
         return ByteFrequencys;
     }
 

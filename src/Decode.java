@@ -36,7 +36,7 @@ public class Decode {
             }
         }
 
-        Element element = huffUtil.makeHuffmanTree(frequencyTable.getFrequency());
+        Element element = huffUtil.makeHuffmanTree(frequencyTable.getFrequencys());
         BinaryTree tree = (BinaryTree) element.getData();
 
 

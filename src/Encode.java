@@ -36,11 +36,11 @@ public class Encode {
         inFile.close();
 
 
-        Element element = huffmanUtil.makeHuffmanTree(frequencyTable.getFrequency());
+        Element element = huffmanUtil.makeHuffmanTree(frequencyTable.getFrequencys());
         BinaryTree tree = (BinaryTree) element.getData();
         String[] huffmanCodes = tree.orderedTraversal(frequencyTable.getLength());
 
-        for (int bitFrequency : frequencyTable.getFrequency()) {
+        for (int bitFrequency : frequencyTable.getFrequencys()) {
             output.writeInt(bitFrequency);
         }
 
