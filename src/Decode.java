@@ -10,6 +10,8 @@ import java.util.concurrent.TimeUnit;
 public class Decode {
     public static void main(String[] args) throws IOException {
 
+        final int AMOUNT_OF_DIFFERENT_BYTES = 256;
+
         long startTime = System.nanoTime();
 
 //        For CMD:
@@ -21,7 +23,7 @@ public class Decode {
         FileOutputStream output = new FileOutputStream("src/test2Decompressed.doc");
 
 
-        Frequency frequencyTable = new Frequency(256);
+        Frequency frequencyTable = new Frequency(AMOUNT_OF_DIFFERENT_BYTES);
         BitInputStream input = new BitInputStream(in);
         HuffmanTree huffUtil = new HuffmanTree();
 
