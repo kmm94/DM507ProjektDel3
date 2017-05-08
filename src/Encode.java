@@ -8,7 +8,10 @@ import java.util.concurrent.TimeUnit;
  */
 public class Encode {
 
+
     public static void main(String[] args) throws IOException {
+
+        final int AMOUNT_OF_DIFFERENT_BYTES = 256;
 
         long startTime = System.nanoTime(); //start Time
 
@@ -24,7 +27,7 @@ public class Encode {
 
 
         BitOutputStream output = new BitOutputStream(outFile);
-        Frequency frequencyTable = new Frequency(256);
+        Frequency frequencyTable = new Frequency(AMOUNT_OF_DIFFERENT_BYTES);
         HuffmanTree huffmanUtil = new HuffmanTree();
 
         //To Read every letter to make a frequencyTable table where A = 65 ++ and so on.
