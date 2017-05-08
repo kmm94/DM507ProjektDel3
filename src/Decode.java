@@ -8,6 +8,11 @@ import java.util.concurrent.TimeUnit;
  * Created by karim møller(karmo15) and Mads Berggreen(madbe15) on 23-02-2017.
  */
 public class Decode {
+    /**
+     * This main-method will decode a file.
+     * @param args
+     * @throws IOException 
+     */
     public static void main(String[] args) throws IOException {
 
         final int AMOUNT_OF_DIFFERENT_BYTES = 256;

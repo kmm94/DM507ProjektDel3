@@ -8,7 +8,12 @@ import java.util.concurrent.TimeUnit;
  */
 public class Encode {
 
-
+    /**
+     * This main-method will take a file and encode it by reading the bits and
+     * compress these with a HuffmanTree using the Huffman code. 
+     * @param args
+     * @throws IOException 
+     */
     public static void main(String[] args) throws IOException {
 
         final int AMOUNT_OF_DIFFERENT_BYTES = 256;
