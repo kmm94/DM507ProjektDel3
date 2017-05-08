@@ -41,14 +41,14 @@ public class BinaryTree {
         return inorderTreeWalk(root,"", nodes);
     }
 
-    private String[] inorderTreeWalk(Node x, String sBit, String[] arrayPass) {
+    private String[] inorderTreeWalk(Node x, String ByteCode, String[] arrayPass) {
         if (x != null) {
-            inorderTreeWalk(x.getLeftChild(), sBit + "0", arrayPass);
+            inorderTreeWalk(x.getLeftChild(), ByteCode + "0", arrayPass);
 
             if (x.getKey() != null) {
-                arrayPass[x.getKey()] = sBit;
+                arrayPass[x.getKey()] = ByteCode;
             }
-            inorderTreeWalk(x.getRightChild(), sBit + "1", arrayPass);
+            inorderTreeWalk(x.getRightChild(), ByteCode + "1", arrayPass);
         }
         return arrayPass;
     }

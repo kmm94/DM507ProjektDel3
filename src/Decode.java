@@ -59,6 +59,6 @@ public class Decode {
         input.close();
         output.close();
         long endTime = System.nanoTime();
-        System.out.println("Time elapsed: " + TimeUnit.SECONDS.convert(endTime - startTime, TimeUnit.NANOSECONDS) + " seconds");
+        System.out.println("Done! Time elapsed: " + TimeUnit.SECONDS.convert(endTime - startTime, TimeUnit.NANOSECONDS) + " seconds");
     }
 }
