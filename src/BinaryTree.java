@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 /**
- * Created by karim møller(karmo15) and Mads Berggreen(madbe15) on 23-02-2017.
+ * Created by karim møller(karmo15) and Mads Berggreen(madbe15) on 06-05-2017.
  */
 public class BinaryTree {
 
@@ -13,7 +13,12 @@ public class BinaryTree {
         root = null;
     }
 
-
+    /**
+     * Inserts the nodes in the tree.
+     * @param root
+     * @param leftChild
+     * @param rightChild 
+     */
     public void insertTree(Node root, Node leftChild, Node rightChild) {
         this.root = root;
         root.setLeftChild(leftChild);
@@ -34,13 +39,26 @@ public class BinaryTree {
         Node newNode = new Node(key);
         root = newNode;
     }
-
+    /**
+     * Returns the array of strings that represent the bits.
+     * @param StringArraySize
+     * @return 
+     */
     public String[] orderedTraversal(int StringArraySize) {
         String[] nodes = new String[StringArraySize];
         i = 0;
         return inorderTreeWalk(root,"", nodes);
     }
-
+    /**
+     * Walks through the tree in inorder and returns an array of strings
+     * with the strings "0" and "1", "0" is for the left nodes
+     * and "1" is for the right nodes.
+     * 
+     * @param x
+     * @param ByteCode
+     * @param arrayPass
+     * @return 
+     */
     private String[] inorderTreeWalk(Node x, String ByteCode, String[] arrayPass) {
         if (x != null) {
             inorderTreeWalk(x.getLeftChild(), ByteCode + "0", arrayPass);

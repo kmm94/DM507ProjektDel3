@@ -11,7 +11,7 @@ public class PQHeap implements PQ {
     /**
      * Constructor.
      *
-     * @param maxElements The amount of elements that there is room for in the que
+     * @param maxElements The amount of elements that there is room for in the queue.
      */
     public PQHeap(int maxElements) {
         heap = new Element[maxElements + one];

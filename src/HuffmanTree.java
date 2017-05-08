@@ -2,7 +2,11 @@
  * Created by karim møller(karmo15) and Mads Berggreen(madbe15) on 23-02-2017.
  */
 public class HuffmanTree {
-
+    /**
+     * Makes the HuffmanTreed used in the encoding and decoding.
+     * @param a the int array inserted in a priority queue.
+     * @return the extracted minimum from the priority queue.
+     */
     public Element makeHuffmanTree(int[] a) {
         PQHeap pq = new PQHeap(a.length);
         for (int i = 0; i < a.length; i++) {
