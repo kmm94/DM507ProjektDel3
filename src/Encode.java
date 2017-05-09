@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by karim møller(karmo15) and Mads Berggreen(madbe15) on 23-02-2017.
+ * Created by karim Møller(karmo15) and Mads Berggreen(madbe15).
  */
 public class Encode {
 

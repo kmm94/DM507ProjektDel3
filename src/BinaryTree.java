@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 /**
- * Created by karim møller(karmo15) and Mads Berggreen(madbe15) on 06-05-2017.
+ * Created by karim Møller(karmo15) and Mads Berggreen(madbe15).
  */
 public class BinaryTree {
 

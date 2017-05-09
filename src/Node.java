@@ -1,5 +1,5 @@
 /**
- * Created by karim møller(karmo15) and Mads Berggreen(madbe15) on 23-02-2017.
+ * Created by karim møller(karmo15) and Mads Berggreen(madbe15).
  */
 public class Node {
 
