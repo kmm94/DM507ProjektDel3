@@ -3,9 +3,9 @@
  */
 public class HuffmanTree {
     /**
-     * Makes the HuffmanTreed used in the encoding and decoding.
-     * @param a the int array inserted in a priority queue.
-     * @return the extracted minimum from the priority queue.
+     * Makes the HuffmanTree used in the encoding and decoding.
+     * @param a the int array that contains the frequencies for the different bytes.
+     * @return the extracted minimum Element from the priority queue. The Element contains the frequencies and a binary tree.
      */
     public Element makeHuffmanTree(int[] a) {
         PQHeap pq = new PQHeap(a.length);

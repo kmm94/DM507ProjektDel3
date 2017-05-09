@@ -12,6 +12,11 @@ public class Frequency {
         byteFrequencys = new int[size];
     }
 
+    /**
+     * The length of the array.
+     *
+     * @return The length of the array.
+     */
     public int getLength() {
         return byteFrequencys.length;
     }
@@ -42,10 +47,5 @@ public class Frequency {
      */
     public int[] getFrequencys() {
         return byteFrequencys;
-    }
-
-    @Override
-    public String toString() {
-        return "Frequency{" + "size=" + byteFrequencys.length + " ,ByteFrequencys= " + Arrays.toString(byteFrequencys) + '}';
     }
 }

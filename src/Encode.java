@@ -10,9 +10,10 @@ public class Encode {
 
     /**
      * This main-method will take a file and encode it by reading the bits and
-     * compress these with a HuffmanTree using the Huffman code. 
+     * compress these with a HuffmanTree using the Huffman code.
+     *
      * @param args
-     * @throws IOException 
+     * @throws IOException
      */
     public static void main(String[] args) throws IOException {
 
@@ -21,15 +22,9 @@ public class Encode {
         long startTime = System.nanoTime(); //start Time
 
 //      For cmd line:
-//      FileInputStream inFile = new FileInputStream(args[0]);
-//      FileInputStream inputFile = new FileInputStream(args[0]);
-//      FileOutputStream outFile = new FileOutputStream(args[1]);
-
-//      For IDE easy input:
-        FileInputStream inFile = new FileInputStream("src/test2.doc");
-        FileInputStream inputFile = new FileInputStream("src/test2.doc");
-        FileOutputStream outFile = new FileOutputStream("src/test2Compressed.doc");
-
+        FileInputStream inFile = new FileInputStream(args[0]);
+        FileInputStream inputFile = new FileInputStream(args[0]);
+        FileOutputStream outFile = new FileOutputStream(args[1]);
 
         BitOutputStream output = new BitOutputStream(outFile);
         Frequency frequencyTable = new Frequency(AMOUNT_OF_DIFFERENT_BYTES);
@@ -42,15 +37,21 @@ public class Encode {
             oneByte = inFile.read();
         }
         inFile.close();
-
+        //Here we make the huffman tree
         Element element = huffmanUtil.makeHuffmanTree(frequencyTable.getFrequencys());
+
+        //casting the object in element to a Binarytree
         BinaryTree tree = (BinaryTree) element.getData();
+
+        //Gets the huffman codes an place them in a string array where index 65 contains the bitcode for the byte integer value 65.
         String[] huffmanCodes = tree.orderedTraversal(frequencyTable.getLength());
 
+        //Prints the frequency table to the top of the compressed file
         for (int bitFrequency : frequencyTable.getFrequencys()) {
             output.writeInt(bitFrequency);
         }
 
+        //Here we read a byte from the input file and prints the bytes huffmancode to the compressed file.
         int aByte = inputFile.read();
         while (aByte != -1) {
             for (char ch : huffmanCodes[aByte].toCharArray()) {
@@ -61,7 +62,7 @@ public class Encode {
         inputFile.close();
         output.close();
 
-        long endTime = System.nanoTime();
+        long endTime = System.nanoTime(); //End time
         System.out.println("Done! Time elapsed: " + TimeUnit.SECONDS.convert(endTime - startTime, TimeUnit.NANOSECONDS) + " seconds");
 
     }

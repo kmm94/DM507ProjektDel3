@@ -19,13 +19,9 @@ public class Decode {
 
         long startTime = System.nanoTime();
 
-//        For CMD:
-//        FileInputStream in = new FileInputStream(args[0]);
-//        FileOutputStream output = new FileOutputStream(args[1]);
-
-//      For IDE easy input:
-        FileInputStream in = new FileInputStream("src/test2Compressed.doc");
-        FileOutputStream output = new FileOutputStream("src/test2Decompressed.doc");
+//      For CMD:
+        FileInputStream in = new FileInputStream(args[0]);
+        FileOutputStream output = new FileOutputStream(args[1]);
 
 
         Frequency frequencyTable = new Frequency(AMOUNT_OF_DIFFERENT_BYTES);

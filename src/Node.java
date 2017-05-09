@@ -8,7 +8,8 @@ public class Node {
     private Integer key;
 
     /**
-     * @param key
+     * Is used to set the key value.
+     * @param key the hey integer value.
      */
     public Node(int key) {
         this.key = key;

@@ -14,10 +14,10 @@ public class BinaryTree {
     }
 
     /**
-     * Inserts the nodes in the tree.
-     * @param root
-     * @param leftChild
-     * @param rightChild 
+     * Is used to merge to trees by creating a new root that takes to child nodes.
+     * @param root A new Node
+     * @param leftChild The new nodes left child
+     * @param rightChild The new nodes right child
      */
     public void insertTree(Node root, Node leftChild, Node rightChild) {
         this.root = root;
@@ -41,7 +41,7 @@ public class BinaryTree {
     }
     /**
      * Returns the array of strings that represent the bits.
-     * @param StringArraySize
+     * @param StringArraySize the return Array's size.
      * @return 
      */
     public String[] orderedTraversal(int StringArraySize) {
@@ -53,11 +53,11 @@ public class BinaryTree {
      * Walks through the tree in inorder and returns an array of strings
      * with the strings "0" and "1", "0" is for the left nodes
      * and "1" is for the right nodes.
-     * 
-     * @param x
-     * @param ByteCode
-     * @param arrayPass
-     * @return 
+     *
+     * @param x The explored node.
+     * @param ByteCode The bytecode to the node.
+     * @param arrayPass The array that contains all the bytecodes.
+     * @return An Array with bytecodes.
      */
     private String[] inorderTreeWalk(Node x, String ByteCode, String[] arrayPass) {
         if (x != null) {
@@ -69,10 +69,5 @@ public class BinaryTree {
             inorderTreeWalk(x.getRightChild(), ByteCode + "1", arrayPass);
         }
         return arrayPass;
-    }
-
-    @Override
-    public String toString() {
-        return "BinaryTree{" + " size= " + 256 + ", Huffman codes= " + Arrays.toString(orderedTraversal(256)) + '}';
     }
 }
