@@ -28,7 +28,7 @@ public class Encode {
 
         BitOutputStream output = new BitOutputStream(outFile);
         Frequency frequencyTable = new Frequency(AMOUNT_OF_DIFFERENT_BYTES);
-        HuffmanTree huffmanUtil = new HuffmanTree();
+        HuffmanTree huffTree = new HuffmanTree();
 
         //To Read every letter to make a frequencyTable table where A = 65 ++ and so on.
         int oneByte = inFile.read();
@@ -38,7 +38,7 @@ public class Encode {
         }
         inFile.close();
         //Here we make the huffman tree
-        Element element = huffmanUtil.makeHuffmanTree(frequencyTable.getFrequencys());
+        Element element = huffTree.makeHuffmanTree(frequencyTable.getFrequencys());
 
         //casting the object in element to a Binarytree
         BinaryTree tree = (BinaryTree) element.getData();

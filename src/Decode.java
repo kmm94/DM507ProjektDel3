@@ -26,7 +26,7 @@ public class Decode {
 
         Frequency frequencyTable = new Frequency(AMOUNT_OF_DIFFERENT_BYTES);
         BitInputStream input = new BitInputStream(in);
-        HuffmanTree huffUtil = new HuffmanTree();
+        HuffmanTree huffTree = new HuffmanTree();
 
         int byteCounter = 0;
         // For loop that will read the input and assign the ints from the input as the frequency of bytes.
@@ -43,7 +43,7 @@ public class Decode {
             }
         }
 
-        Element element = huffUtil.makeHuffmanTree(frequencyTable.getFrequencys());
+        Element element = huffTree.makeHuffmanTree(frequencyTable.getFrequencys());
         BinaryTree tree = (BinaryTree) element.getData();
 
         /*The for loop will make the current node equals to the root of the tree,
